@@ -107,8 +107,6 @@ fingerprint in Nxxx:13 - Nxxx:17
         try:
             self.open()
             result = self.slc.read(self.all_clock_tags)
-            print((type(result.value),))
-            print((pycomm3.tag.Tag,))
 
             if not isinstance(result,pycomm3.tag.Tag):
                 raise SLCTimeError(('Pycomm3 returned non-Tag object'))
@@ -120,13 +118,13 @@ fingerprint in Nxxx:13 - Nxxx:17
             if (-2 & last6[0]):
                 raise SLCTimeError('Bad value in {0}'.format(self.fmt('12')))
 
-            if last[1]!=SLC_TIME.CLOK16:
+            if last6[1]!=SLC_TIME.CLOK16:
                 raise SLCTimeError('Bad value [0x{1:04x}] in CLOK signature {0}, should be 0x3cfb'
-                                   .format(self.fmt('13'),last[1])
+                                   .format(self.fmt('13'),last6[1])
                                   )
-            if last[-4:]!=self.ip_ints:
+            if last6[-4:]!=self.ip_ints:
                 raise SLCTimeError('Bad value  in CLOK signature {0}, should be 0x3cfb'
-                                   .format(self.fmt('14{4}'),str(last[-4:]))
+                                   .format(self.fmt('14{4}'),str(last6[-4:]))
                                   )
 
             adjust_disabled = (1 & last6[0]) and True or False
