@@ -1,7 +1,7 @@
 """
-slc_adjust_time.py - Use pycomm3 module to adjust time of SLC PLC
-                     if it is not within some error (4s default) of
-                     local operating system's clock
+slc_adjust_clock.py - Use pycomm3 module to adjust time of SLC PLC if it
+                      is not within some error (4s default) of local
+                      operating system's clock
 
 """
 ########################################################################
