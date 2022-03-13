@@ -1,7 +1,7 @@
 ## SLC adjust clock
 
 Python script to adjust Calendar/Real-Time Clock of SLC/MicroLogix using
-[pycomm3 module](cf. https://github.com/ottowayi/pycomm3)
+[ottowayi/pycomm3 module](https://github.com/ottowayi/pycomm3)
 
 ### Minimal usage:
 * Update clock on MicroLogix 1100 at IP address 192.168.1.112 using N-file 100:
